@@ -380,6 +380,8 @@ class AnkiConnect {
             case 'deck-root':
                 query = `"deck:${this._escapeQuery(AnkiUtil.getRootDeckName(note.deckName))}" `;
                 break;
+            case 'collection':
+                query = `"note:${this._escapeQuery(note.modelName)}" `;
         }
         query += this._fieldsToQuery(note.fields);
         return query;
